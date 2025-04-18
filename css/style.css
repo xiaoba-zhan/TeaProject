@@ -1,0 +1,320 @@
+/* 页面布局 */
+:root {
+    --primary-color: #2B8C44;
+    --secondary-color: #1F6B38;
+    --background: #F5F5F5;
+    --text-dark: #333;
+    --text-light: #666;
+    --form-background: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*    background-color: var(--background);*/
+    background: url("../image/body背景1.jpg") no-repeat center / cover;
+    color: var(--text-dark);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+/*    background: var(--form-background);*/
+    background: url("../image/主页面背景.jpg") no-repeat center / cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.logo i {
+    font-size: 2.5rem;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 内容布局：左右 */
+.content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* 表单样式 */
+.form-wrapper {
+    flex: 1;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(43,140,68,0.2);
+    outline: none;
+}
+
+.gender-options {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.gender-option input {
+    display: none;
+}
+
+.gender-option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.gender-option input:checked + label {
+    background: var(--primary-color);
+    color: white;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+}
+
+.result-container {
+    flex: 2;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.default-message {
+    text-align: center;
+    color: var(--text-light);
+    padding: 2rem;
+}
+
+.default-message i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* 错误提示 */
+.error {
+    background: #ffe6e6;
+    border: 2px solid #ff4444;
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #cc0000;
+    text-align: center;
+}
+
+.error i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* 页脚 */
+.footer {
+    text-align: center;
+    padding: 1rem;
+/*    background: #f8f9fa;*/
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* 卡片容器 */
+.tea-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tea-card:hover {
+    transform: translateY(-10px); /* 立体效果 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 鼠标悬停时的阴影效果 */
+}
+
+/* 茶品图片 */
+.tea-image-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.tea-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 主要信息部分 */
+.tea-info {
+    flex-grow: 1;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2b8c44;
+}
+
+.type-tag {
+    font-size: 1rem;
+    color: #666;
+}
+
+.poem {
+    font-style: italic;
+    color: #4CAF50;  /* 使用绿色，符合茶主题 */
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+/* 健康功效、口味特征和描述的样式 */
+p {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* 按钮 */
+.tea-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.buy-link, .view-details-btn {
+    padding: 10px 15px;
+    background-color: #2b8c44;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.view-details-btn {
+    background-color: #f0a500; /* 了解按钮的颜色 */
+}
+
+.buy-link:hover, .view-details-btn:hover {
+    background-color: #1f6b38;
+}
+
+/* 侧边按钮样式 */
+.explore-button-container {
+  position: fixed;  /* 使用 fixed 定位，确保按钮在页面滚动时固定 */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000; /* 确保按钮在页面的其他元素之上 */
+  padding: 10px;
+}
+
+.explore-button {
+  width: 150px;
+  height: 60px;
+  background-color: rgba(0, 51, 0, 0.7); /* 深绿色 */
+  color: white;
+  border: none;
+  border-right: 3px solid #f4f4f4; /* 与 container 左边框有3px间隔 */
+  border-radius: 10px; /* 圆角按钮 */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 为按钮添加阴影 */
+  padding: 10px 20px; /* 内边距调整 */
+}
+
+.explore-button:hover {
+  background-color: var(--secondary-color); /* 鼠标悬停时颜色变化 */
+  transform: translateX(5px); /* 鼠标悬停时稍微右移按钮，增加互动感 */
+}
+
+.heritage-btn:hover {
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* 鼠标悬停时加深阴影 */
+}

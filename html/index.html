@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>“叶脉云枢”智慧平台</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+     <!-- 添加按钮的部分 -->
+    <div class="explore-button-container">
+        <a href="heritage_story.html" class="explore-button">
+            探索非遗文化
+        </a>
+    </div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-mug-hot"></i>
+                <h1>“浮雨金茗”智慧平台</h1>
+            </div>
+            <p class="subtitle">基于人工智能的专业养生茶饮推荐</p>
+        </header>
+
+        <div class="content">
+            <!-- 左边：输入表单 -->
+            <div class="form-wrapper">
+                <form id="teaForm" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" class="form-control" placeholder="请输入您的姓名" required>
+                        <div class="invalid-feedback">请输入有效姓名</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>性别</label>
+                        <div class="gender-options">
+                            <div class="gender-option">
+                                <input type="radio" id="male" name="gender" value="男" required>
+                                <label for="male"><i class="fas fa-mars"></i> 男</label>
+                            </div>
+                            <div class="gender-option">
+                                <input type="radio" id="female" name="gender" value="女">
+                                <label for="female"><i class="fas fa-venus"></i> 女</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">年龄</label>
+                        <input type="number" id="age" class="form-control" min="12" max="100" placeholder="请输入年龄" required>
+                        <div class="invalid-feedback">请输入有效年龄（12-100岁）</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="health">健康需求</label>
+                        <input type="text" id="health" class="form-control" placeholder="例如：护眼、助眠、降火..." required>
+                        <div class="invalid-feedback">请输入至少一个健康需求</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taste">口味偏好</label>
+                        <select id="taste" class="form-control" required>
+                            <option value="" disabled selected>请选择偏好口味</option>
+                            <option value="清香">清香型</option>
+                            <option value="浓醇">浓醇型</option>
+                            <option value="甘甜">甘甜型</option>
+                            <option value="花香">花香味</option>
+                            <option value="果香">果香味</option>
+                        </select>
+                        <div class="invalid-feedback">请选择口味偏好</div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-search"></i> 智能推荐
+                    </button>
+                </form>
+            </div>
+
+            <!-- 右边：推荐结果 -->
+            <div id="result" class="result-container">
+                <div class="default-message">
+                    <i class="fas fa-info-circle"></i>
+                    <p>填写表单获取个性化茶饮推荐</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by DeepSeek API · 推荐结果仅供参考</p>
+        </footer>
+    </div>
+
+    <script src="../script_chart.js"></script>
+</body>
+</html>

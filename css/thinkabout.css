@@ -1,0 +1,197 @@
+thinkaboutit.css
+    /* 基本页面样式 */
+*{
+    font-family: 宋体;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    position: relative;
+}
+
+h1, h2 {
+    font-family: 'SimHei', sans-serif;
+}
+
+/* Header 样式 */
+header {
+    background: url("../image/标题栏.jpg");
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--form-background);
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    background: url("../image/背景3.jpg") no-repeat center / cover;
+    padding: 20px;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 3em;
+    font-family: 华文行楷;
+    font-weight: 300;
+}
+
+/* Content 样式 */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* 确保两边内容区高度一致 */
+    padding: 40px 20px;
+/*    background-color: #f4f4f4;*/
+     background: transparent; /* 背景设置为透明 */
+}
+
+.left-image, .right-image {
+    flex: 1;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 2px; /* 使得两者之间有 2px 的间隔 */
+}
+
+.left-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-image .inheritance-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.bio {
+    flex: 2;
+    /*  background-color: white;*/
+    background: rgba(0, 51, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* 使文字内容垂直排列 */
+    justify-content: space-between; /* 上下内容均匀分布 */
+    position: relative; /* 为了让伪元素覆盖背景 */
+}
+
+/* 添加透明蒙版 */
+.bio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6); /* 半透明白色蒙版 */
+    border-radius: 8px;
+    z-index: 1; /* 确保蒙版位于背景图片之上，文字之下 */
+}
+
+.bio h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    position: relative; /* 保证文字显示在蒙版之上 */
+    z-index: 2;
+}
+
+.bio p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: #333;
+    position: relative; /* 保证文字显示在蒙版之上 */
+    z-index: 2;
+}
+
+/* 个人语录部分 */
+.quotes {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 51, 0, 0.3);
+    border-radius: 10px;
+}
+
+.quotes h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.quotes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列布局 */
+    gap: 20px;
+    justify-items: center;
+}
+
+.quote-card {
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景 */
+    padding: 20px;
+    border-radius: 15px; /* 更大的圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 0 8px 30px rgba(0, 0, 0, 0.1); /* 多层阴影效果 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 平滑过渡效果 */
+    cursor: pointer;
+}
+
+.quote-card:hover {
+    transform: translateY(-10px); /* 鼠标悬停时卡片上移 */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 16px 45px rgba(0, 0, 0, 0.15); /* 悬停时增加阴影 */
+}
+
+.quote-card p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+    font-weight: 600; /* 更加突出语录内容 */
+    line-height: 1.5; /* 更好的行间距 */
+}
+
+@media (max-width: 768px) {
+    /* 小屏幕下，调整为2列布局 */
+    .quotes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    /* 更小屏幕下，调整为1列布局 */
+    .quotes-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer 样式 */
+footer {
+    background: linear-gradient(to right, rgba(0, 51, 0, 0.5), rgba(0, 102, 0, 0.5)); /* 与 header 使用相同的渐变效果 */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
